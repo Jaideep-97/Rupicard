@@ -29,6 +29,7 @@ dependencies {
         implementation ('com.google.auth:google-auth-library-credentials:1.2.0')
         implementation ('com.fasterxml.jackson.core:jackson-core:2.12.5')
         implementation 'com.google.http-client:google-http-client-jackson2:1.41.1'
+        implementation 'org.springframework.boot:spring-boot-starter-thymeleaf'
         implementation group: 'org.postgresql', name: 'postgresql', version: '42.6.0'
         runtimeOnly 'com.h2database:h2'
     }

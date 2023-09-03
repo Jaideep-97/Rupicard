@@ -4,7 +4,7 @@ public class AddDataRequest {
 
     private String name;
 
-    private String mobNo;
+    private String mobile;
 
     public String getName() {
         return name;
@@ -14,11 +14,11 @@ public class AddDataRequest {
         this.name = name;
     }
 
-    public String getMobNo() {
-        return mobNo;
+    public String getMobile() {
+        return mobile;
     }
 
-    public void setMobNo(String mobNo) {
-        this.mobNo = mobNo;
+    public void setMobile(String mobile) {
+        this.mobile = mobile;
     }
 }

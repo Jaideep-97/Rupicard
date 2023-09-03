@@ -51,7 +51,7 @@ public class RupiCardServiceImpl implements RupiCardService{
 
         // Create a ValueRange with the data to add
         List<List<Object>> data = Arrays.asList(
-                Arrays.asList(addDataRequest.getName(), addDataRequest.getMobNo()) // Example data
+                Arrays.asList(addDataRequest.getName(), addDataRequest.getMobile()) // Example data
         );
 
         ValueRange valueRange = new ValueRange();
@@ -59,7 +59,7 @@ public class RupiCardServiceImpl implements RupiCardService{
 
         // Update the Google Sheet with the new data
         sheetsService.spreadsheets().values()
-                .update(spreadsheetId, range, valueRange)
+                .append(spreadsheetId, range, valueRange)
                 .setValueInputOption("RAW")
                 .execute();
         }

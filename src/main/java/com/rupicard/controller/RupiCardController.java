@@ -16,6 +16,11 @@ public class RupiCardController {
     @Autowired
     private RupiCardService rupiCardService;
 
+    @GetMapping("/")
+    public String index() {
+        return "index";
+    }
+
     @RequestMapping(value = "/api/addData", method = RequestMethod.POST)
     public @ResponseBody ResponseEntity<?> addData(@RequestBody AddDataRequest addDataRequest) throws GeneralSecurityException, IOException {
 

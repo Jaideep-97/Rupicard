@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Rupicard</title>
+</head>
+<body>
+<h1>Rupicard</h1>
+
+<!-- Input fields for the data you want to send -->
+<label for="name">Name:</label>
+<input type="text" id="name" placeholder="Enter Name"><br>
+
+<label for="mobile">Mobile No:</label>
+<input type="mobile" id="mobile" placeholder="Enter Mobile No"><br>
+
+<button id="postData">Submit Data</button>
+
+<p id="responseMessage"></p>
+
+<script>
+        document.getElementById("postData").addEventListener("click", function () {
+            const name = document.getElementById("name").value;
+            const mobile = document.getElementById("mobile").value;
+
+            const data = {
+                name: name,
+                mobile: mobile
+            };
+
+            fetch('http://localhost:8181/api/addData', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify(data)
+            })
+            .then(data => {
+                document.getElementById("responseMessage").textContent = "Data posted successfully!";
+                // You can handle the response data here if needed
+            })
+            .catch(error => {
+                document.getElementById("responseMessage").textContent = "Error posting data: " + error.message;
+            });
+        });
+    </script>
+</body>
+</html>
