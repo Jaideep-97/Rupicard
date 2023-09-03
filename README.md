@@ -9,3 +9,5 @@ Req Body: {
     "name" : "N1",
     "mobNo" : "123"
 }
+
+Use this webpage to post data: http://localhost:8181/index.html
