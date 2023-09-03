@@ -1,0 +1,39 @@
+buildscript {
+    repositories {
+        mavenCentral()
+    }
+    dependencies {
+        classpath("org.springframework.boot:spring-boot-gradle-plugin:1.5.9.RELEASE")  // spring boot gradle plugin will used for generate jar
+    }
+}
+repositories {
+    mavenCentral()
+}
+description = "Spring boot Gradle Example"
+apply plugin: 'java'                                // plugin for java
+apply plugin: 'org.springframework.boot'            // plugin for spring boot framework
+jar {
+    baseName = 'spring-boot-gradle-example'             // jar file name
+    version =  '1.0.0'                                  // application version
+}
+dependencies {
+    compile("org.springframework.boot:spring-boot-starter-web")     // web application dependency
+    dependencies {
+        implementation('org.springframework.boot:spring-boot-starter-web')
+        implementation('org.springframework.boot:spring-boot-starter-data-jpa')
+        implementation( 'com.google.api-client:google-api-client:1.32.1')
+        implementation ('com.google.api-client:google-api-client-gson:1.32.1')
+        implementation( 'com.google.oauth-client:google-oauth-client-jetty:1.32.1')
+        implementation( 'com.google.apis:google-api-services-sheets:v4-rev581-1.25.0')
+        implementation ('com.google.auth:google-auth-library-oauth2-http:1.2.0')
+        implementation ('com.google.auth:google-auth-library-credentials:1.2.0')
+        implementation ('com.fasterxml.jackson.core:jackson-core:2.12.5')
+        implementation 'com.google.http-client:google-http-client-jackson2:1.41.1'
+        implementation group: 'org.postgresql', name: 'postgresql', version: '42.6.0'
+        runtimeOnly 'com.h2database:h2'
+    }
+}
+sourceCompatibility = 1.8                               // for Java 1.8
+targetCompatibility = 1.8
+group 'spring-boot-demo'
+version '1.0-SNAPSHOT'
